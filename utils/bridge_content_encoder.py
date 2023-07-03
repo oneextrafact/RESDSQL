@@ -216,10 +216,9 @@ def get_column_picklist(table_name: str, column_name: str, db_path: str) -> list
             else:
                 picklist.add(x[0])
         picklist = list(picklist)
+        conn.close()
     except Exception as e:
         picklist = []
-    finally:
-        conn.close()
     return picklist
 
 
